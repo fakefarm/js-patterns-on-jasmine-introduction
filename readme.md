@@ -1,4 +1,6 @@
-# how this works
+# Introduction
+
+## how this works
 
 the course you've found yourself in is a study on javascript patterns book that will be written by jasmine tests. If that sounds weird to you then you're probably in the wrong place. If you're into this then read on.
 
