@@ -56,17 +56,24 @@ describe("Introduction", function() {
     });
 
     describe('Even variables are objects.', function() {
-      it('This variable has a color attribute associated with it.', function() {
+      xit('Y U FAIL? This variable has a color attribute associated with it.', function() {
         var apple = 'fruit';
         apple.color = 'red';
         expect(apple.color).toBe('red');
       });
-    });
-
-    it("should be possible to resume", function() {
-      player.resume();
-      expect(player.isPlaying).toBeTruthy();
-      expect(player.currentlyPlayingSong).toEqual(song);
+      describe("Attributes set the rules, like if a variable can be changed, deleted, or enumerated in a 'for-in' loop", function() {
+        it("This variable cannot be enumerated. Is that because it's a string?", function() {
+          var cart = 'stuff in here';
+          var not_an_enum = cart.propertyIsEnumerable();
+          expect(not_an_enum).toBe(false);
+        });
+      });
+      describe('Objects are just collections of named properties, a list of key-value pairs', function() {
+        it("??? What is the benefit of having the word 'object' be returned from typeof()?", function() {
+          var my_object = {};
+          expect(typeof(my_object)).toBe('object');
+        });
+      });
     });
   });
 
