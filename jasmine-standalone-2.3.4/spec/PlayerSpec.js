@@ -44,6 +44,17 @@ describe("Introduction", function() {
       });
     });
 
+    describe('Functions are objects, too. They can have properties and methods', function() {
+      it("for example, this function has both a method and a property. The property is set then, the the function's method is called to change the property's value. once it does that, you can see it passes.", function() {
+        var boom = function bar() {};
+        boom.field = 'blah';
+        boom.zoom = function() { boom.field = 'bar'; };
+        boom.zoom();
+        expect(boom.field).toBe('bar');
+      });
+      describe("TESTING AH-HA. I was over complicating my expectation rather than reducing it to a simple boolean or string matching. While this is not the end all, I'm starting to realize I can even !! a property just to convert it's contents into true so to easily test it. Nice." , function() {});
+    });
+
     it("should be possible to resume", function() {
       player.resume();
       expect(player.isPlaying).toBeTruthy();
