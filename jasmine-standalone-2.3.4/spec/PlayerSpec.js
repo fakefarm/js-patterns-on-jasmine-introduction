@@ -55,6 +55,14 @@ describe("Introduction", function() {
       describe("TESTING AH-HA. I was over complicating my expectation rather than reducing it to a simple boolean or string matching. While this is not the end all, I'm starting to realize I can even !! a property just to convert it's contents into true so to easily test it. Nice." , function() {});
     });
 
+    describe('Even variables are objects.', function() {
+      it('This variable has a color attribute associated with it.', function() {
+        var apple = 'fruit';
+        apple.color = 'red';
+        expect(apple.color).toBe('red');
+      });
+    });
+
     it("should be possible to resume", function() {
       player.resume();
       expect(player.isPlaying).toBeTruthy();
