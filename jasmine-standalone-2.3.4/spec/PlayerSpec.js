@@ -1,4 +1,5 @@
-describe("Player", function() {
+describe("Introduction", function() {
+  'use strict';
   var player;
   var song;
 
@@ -15,17 +16,32 @@ describe("Player", function() {
     expect(player).toBePlaying(song);
   });
 
-  describe("when song has been paused", function() {
+  describe("pg. 3 - 'Object Oriented'", function() {
     beforeEach(function() {
       player.play(song);
       player.pause();
     });
-
-    it("should indicate that the song is currently paused", function() {
-      expect(player.isPlaying).toBeFalsy();
-
-      // demonstrates use of 'not' with a custom matcher
-      expect(player).not.toBePlaying(song);
+    describe('Everything is an object except', function() {
+      it("numbers,", function() {
+        var number = typeof(3);
+        expect(number).toBe('number');
+      });
+      it("strings,", function() {
+        var string = typeof('string');
+        expect(string).toBe('string');
+      });
+      it("boolean,", function() {
+        var bool = typeof(true);
+        expect(bool).toBe('boolean');
+      });
+      it("undefined,", function() {
+        var nully = typeof(undefined);
+        expect(nully).toBe('undefined');
+      });
+      it("null is stated, but it returns as 'object'. hmm wonder why?", function() {
+        var nully = typeof(null);
+        expect(nully).toBe('object');
+      });
     });
 
     it("should be possible to resume", function() {
@@ -56,3 +72,4 @@ describe("Player", function() {
     });
   });
 });
+
